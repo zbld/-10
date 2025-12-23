@@ -30,8 +30,9 @@ module top(
     output wire        memwrite,
     
     input  wire [4:0]  sw_dbg,
-    output wire[3:0] ans, //ÊýÂë¹ÜÎ»Ñ¡
-    output wire[6:0] seg  //ÊýÂë¹Ü¶ÎÑ¡
+    input  wire [15:0] switch_value,  // 16-bit switch input for peripheral I/O
+    output wire[3:0] ans, //ï¿½ï¿½ï¿½ï¿½ï¿½Î»Ñ¡
+    output wire[6:0] seg  //ï¿½ï¿½ï¿½ï¿½Ü¶ï¿½Ñ¡
     );
 
 //    wire [31:0] writedata;
@@ -40,6 +41,7 @@ module top(
 
     wire [15:0] debug_reg_data;
     wire [31:0] pc, instr, readdata;
+    wire [31:0] readdata_mem;  // Data from memory
     
 //    wire div_clk;
     
@@ -63,8 +65,12 @@ module top(
         .debug_reg_addr(sw_dbg),
         .debug_reg_data(debug_reg_data)
     );
+    
+    // Peripheral I/O multiplexer: 0x0-0x3FFF is memory, 0x4000+ is peripheral
+    // Address 0x4000 maps to switch input
+    assign readdata = (dataadr[14] == 1'b0) ? readdata_mem : {16'b0, switch_value};
 
-    // Ö¸Áî´æ´¢Æ÷£ºaddra ¿í 8 Î»£¬È¡ pc[9:2]
+    // Ö¸ï¿½ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½addra ï¿½ï¿½ 8 Î»ï¿½ï¿½È¡ pc[9:2]
     imem imem_inst (
 //        .clka(div_clk),
         .clka(clk),
@@ -72,14 +78,14 @@ module top(
         .douta(instr)
     );
 
-    // Êý¾Ý´æ´¢Æ÷£ºaddra ¿í 6 Î»£¬wea ÊÇ 1-bit ÏòÁ¿
+    // ï¿½ï¿½ï¿½Ý´æ´¢ï¿½ï¿½ï¿½ï¿½addra ï¿½ï¿½ 6 Î»ï¿½ï¿½wea ï¿½ï¿½ 1-bit ï¿½ï¿½ï¿½ï¿½
     data_mem dmem_inst (
-//        .clka(~div_clk),               // Ð´Ê±ÖÓÔÚ memwrite Ê±ÓÐÐ§£¬Ô­Éè¼ÆÓÃ ~clk
+//        .clka(~div_clk),               // Ð´Ê±ï¿½ï¿½ï¿½ï¿½ memwrite Ê±ï¿½ï¿½Ð§ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ ~clk
         .clka(~clk),
         .wea({memwrite}),          // wea[0]=memwrite
         .addra(dataadr[9:2]),      // 6-bit address
         .dina(writedata),
-        .douta(readdata)
+        .douta(readdata_mem)       // Connect to readdata_mem instead of readdata
     );
 
         display u_display(

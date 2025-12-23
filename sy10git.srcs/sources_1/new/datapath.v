@@ -4,7 +4,7 @@ module datapath(
     input  wire        memtoreg, pcsrc,
     input  wire        alusrc, regdst,
     input  wire        regwrite, jump,
-    input  wire [2:0]  alucontrol,
+    input  wire [3:0]  alucontrol,  // Extended to 4-bit
     output wire        overflow, zero,
     output wire [31:0] pc,
     input  wire [31:0] instr,
@@ -21,7 +21,7 @@ module datapath(
     wire [31:0] result;
     wire [4:0]  writereg;
 
-    // PC ¼Ä´æÆ÷
+    // PC ï¿½Ä´ï¿½ï¿½ï¿½
     pc pcreg(
         .clk(clk),
         .rst(rst),
@@ -32,15 +32,15 @@ module datapath(
     adder pcadd1(.a(pc), .b(32'd4), .y(pcplus4));
     adder pcadd2(.a(pcplus4), .b(signimmsh), .y(pcbranch));
 
-    // Ìø×ªÄ¿±ê£¨ÓÃµ±Ç°Ö¸Áî×Ö¶Î£©
+    // ï¿½ï¿½×ªÄ¿ï¿½ê£¨ï¿½Ãµï¿½Ç°Ö¸ï¿½ï¿½ï¿½Ö¶Î£ï¿½
     wire [31:0] pcjump = {pcplus4[31:28], instr[25:0], 2'b00};
 
-    // ·ÖÖ§ / Ë³Ðò
+    // ï¿½ï¿½Ö§ / Ë³ï¿½ï¿½
     mux2 #(32) pcmux (.d0(pcplus4), .d1(pcbranch), .s(pcsrc), .y(pcnextbr));
-    // Ìø×ª
+    // ï¿½ï¿½×ª
     mux2 #(32) pcmux2(.d0(pcnextbr), .d1(pcjump),   .s(jump),  .y(pcnext));
 
-    // ¼Ä´æÆ÷¶Ñ¶ÁµØÖ·£ºµ±Ç°Ö¸Áî×Ö¶Î
+    // ï¿½Ä´ï¿½ï¿½ï¿½ï¿½Ñ¶ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ç°Ö¸ï¿½ï¿½ï¿½Ö¶ï¿½
     regfile rf(
         .clk(clk),
         .we3(regwrite),

@@ -2,50 +2,57 @@
 module testbench();
     reg clk = 1'b0;
     reg rst = 1'b1;
+    reg [4:0] sw_dbg = 5'b00000;
+    reg [15:0] switch_value = 16'h0000;
 
     wire [31:0] writedata, dataadr;
     wire memwrite;
+    wire [3:0] ans;
+    wire [6:0] seg;
 
-    // ¶Ë¿ÚÃûÀý»¯ top
+    // ï¿½Ë¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ top
     top dut (
         .writedata(writedata),
         .dataadr(dataadr),
         .memwrite(memwrite),
         
         .clk(clk),
-        .rst(rst)
-
+        .rst(rst),
+        .sw_dbg(sw_dbg),
+        .switch_value(switch_value),
+        .ans(ans),
+        .seg(seg)
     );
 
-    // Ê±ÖÓ£º20ns ÖÜÆÚ
+    // Ê±ï¿½Ó£ï¿½20ns ï¿½ï¿½ï¿½ï¿½
     always #10 clk = ~clk;
 
-    // ¸´Î»
+    // ï¿½ï¿½Î»
     initial begin
         #200;
         rst = 1'b0;
     end
 
-    // ²¨ÐÎ£¨ÈçÓÃ WDB£¬¿ÉÉ¾µô£©
+    // ï¿½ï¿½ï¿½Î£ï¿½ï¿½ï¿½ï¿½ï¿½ WDBï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½
     initial begin
         $dumpfile("mips_tb.vcd");
         $dumpvars(0, testbench);
     end
 
-    // ³¬Ê±±£»¤
+    // ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
     initial begin
         #5000;
         $display("Simulation timed out without success.");
         $stop;
     end
 
-    // Ã¿¸öÖÜÆÚ´òÓ¡ PC/Instr£¬±ãÓÚ¶¨Î»
+    // Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½Ó¡ PC/Instrï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½Î»
     always @(posedge clk) begin
         $display("%t PC=%h Instr=%h memwrite=%b addr=%h data=%h",
                  $time, dut.pc, dut.instr, memwrite, dataadr, writedata);
     end
 
-    // ³É¹¦ÅÐ¶¨£ºµØÖ· 84£¬Êý¾Ý 7£¨Ð´¿ÚÔÚ ~clk ÉÏÉýÑØ£¬Ïàµ±ÓÚ clk µÄÏÂ½µÑØ£©
+    // ï¿½É¹ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½Ö· 84ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 7ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ ~clk ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½àµ±ï¿½ï¿½ clk ï¿½ï¿½ï¿½Â½ï¿½ï¿½Ø£ï¿½
     always @(negedge clk) begin
         if (memwrite) begin
             $display("%t MEMWRITE addr=%0d (0x%h) data=%0d (0x%h)",
