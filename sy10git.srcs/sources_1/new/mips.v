@@ -33,7 +33,7 @@ module mips(
     );
 	
 	wire memtoreg,alusrc,regdst,regwrite,jump,pcsrc,zero,overflow;
-	wire[2:0] alucontrol;
+	wire[3:0] alucontrol;  // Extended to 4-bit
 
 	controller c(instr[31:26],instr[5:0],zero,memtoreg,
 		memwrite,pcsrc,alusrc,regdst,regwrite,jump,alucontrol);

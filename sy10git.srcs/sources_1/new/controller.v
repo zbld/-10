@@ -10,7 +10,7 @@ module controller(
     output wire       regdst,
     output wire       regwrite,
     output wire       jump,
-    output wire [2:0] alucontrol
+    output wire [3:0] alucontrol  // Extended to 4-bit
 );
     wire [1:0] aluop;
     wire branch;
