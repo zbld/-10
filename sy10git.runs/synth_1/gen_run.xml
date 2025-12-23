@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1765963385">
+  <File Type="PA-TCL" Name="top.tcl"/>
+  <File Type="REPORTS-TCL" Name="top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="top.vds"/>
+  <File Type="RDS-UTIL" Name="top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="top.dcp"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/adder.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/sources_1/new/adder.v"/>
+        <Attr Name="ImportTime" Val="1765703608"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/alu.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/sources_1/new/alu.v"/>
+        <Attr Name="ImportTime" Val="1765703632"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/aludec.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/sources_1/new/aludec.v"/>
+        <Attr Name="ImportTime" Val="1765776746"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/controller.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/sources_1/new/controller.v"/>
+        <Attr Name="ImportTime" Val="1765776648"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/datapath.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/sources_1/new/datapath.v"/>
+        <Attr Name="ImportTime" Val="1765892567"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/display.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/sources_1/new/display.v"/>
+        <Attr Name="ImportTime" Val="1765903230"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/divide_clk.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/sources_1/new/divide_clk.v"/>
+        <Attr Name="ImportTime" Val="1765963199"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/maindec.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/sources_1/new/maindec.v"/>
+        <Attr Name="ImportTime" Val="1765776730"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mips.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/sources_1/new/mips.v"/>
+        <Attr Name="ImportTime" Val="1765895547"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mux2.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/sources_1/new/mux2.v"/>
+        <Attr Name="ImportTime" Val="1765712546"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/pc.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/sources_1/new/pc.v"/>
+        <Attr Name="ImportTime" Val="1765960811"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/regfile.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/sources_1/new/regfile.v"/>
+        <Attr Name="ImportTime" Val="1765713236"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/seg7.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/sources_1/new/seg7.v"/>
+        <Attr Name="ImportTime" Val="1765790233"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/signext.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/sources_1/new/signext.v"/>
+        <Attr Name="ImportTime" Val="1765704072"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sl2.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/sources_1/new/sl2.v"/>
+        <Attr Name="ImportTime" Val="1765704124"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/top.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/sources_1/new/top.v"/>
+        <Attr Name="ImportTime" Val="1766449545"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sy9/sy9.coe">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/computerComponentEXE/sy9/sy9.coe"/>
+        <Attr Name="ImportTime" Val="1765773201"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sy9/datamem.coe">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/computerComponentEXE/sy9/datamem.coe"/>
+        <Attr Name="ImportTime" Val="1765710750"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="top"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/basys3.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sy9/sy9.srcs/constrs_1/new/basys3.xdc"/>
+        <Attr Name="ImportTime" Val="1765963110"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="imem"/>
+  <BlockFileSet Type="BlockSrcs" Name="data_mem"/>
+</GenRun>
